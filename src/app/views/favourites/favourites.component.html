@@ -15,7 +15,7 @@
           <tbody>
             <!-- Aquí se insertan dinámicamente las filas con los autores -->
             <tr *ngFor="let author of favourites.authors">
-              <td  style="cursor: pointer;">{{author}}</td>
+              <td (click)="detailsAuthor(author)" style="cursor: pointer;">{{author}} </td>
               <td>
                 <button class="btn btn-danger" (click)="removeFavouriteAuthor(author)">Eliminar Favorito</button>
               </td>
@@ -26,13 +26,19 @@
     </div>
   </div>
 
-  <!-- Lista desplegable de detalles de autor -->
-  <div class="row mt-4" >
+  <div class="row mt-4">
     <div class="col">
-      <h3>Detalles del Autor: </h3>
-
+      <h3>Detalles de las Obras del Autor </h3>
+      <!-- Lista vertical de obras del autor -->
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let titledetail of title">
+          <p>{{ titledetail.title }}</p>
+        </li>
+      </ul>
     </div>
   </div>
+
+
 
   <div class="row mt-4">
     <div class="col">
@@ -49,7 +55,7 @@
           <tbody>
             <!-- Aquí se insertan dinámicamente las filas con las obras -->
             <tr *ngFor="let title of favourites.title">
-              <td  style="cursor: pointer;">{{title}}</td>
+              <td (click)="detailsTitle(title)" style="cursor: pointer;">{{title}}</td>
               <td>
                 <button class="btn btn-danger" (click)="removeFavouriteTitle(title)" >Eliminar Favorito</button>
               </td>
@@ -61,10 +67,19 @@
   </div>
 
   <!-- Lista desplegable de detalles de obra -->
-  <div class="row mt-4">
-    <div class="col">
-      <h3>Detalles de la Obra: </h3>
-
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2>Fragmento de las Obras {{author}}</h2>
+        <ul class="list-group">
+          <li *ngFor="let fragment1 of fragment;" class="list-group-item" >
+            <h2>{{fragment1.author}}</h2>
+            <h3>{{fragment1.title}}</h3>
+            <ul  *ngFor="let lines of fragment1.lines;">
+              <a >{{lines}}</a>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>

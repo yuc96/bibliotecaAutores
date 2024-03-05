@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { ListFavourites } from '../../models/favourites.interface';
 import { ApiService } from '../../servicios/api/api.service';
+import { Listtile } from '../../models/title.interface';
+import { ListFragmentAuthor } from '../../models/fragmentAuthor.interface';
 
 @Component({
   selector: 'app-favourites',
@@ -21,6 +23,11 @@ export class FavouritesComponent {
   };
 
   numberFavourites?:number;
+  title:Listtile[]=[];
+  title1?:any;
+  author?:any;
+
+  fragment:ListFragmentAuthor[]=[];
 
 
   ngOnInit(): void {
@@ -46,12 +53,30 @@ export class FavouritesComponent {
 
     this.api.removeFavouriteAuthor(author);
     this.setObjectFavourites();
+    this.title=[];
 
   }
   removeFavouriteTitle(title:string){
 
     this.api.removeFavouriteTitle(title);
     this.setObjectFavourites();
+    this.fragment=[];
+
+  }
+
+  detailsAuthor(author:string){
+    this.api.getAllTitle(author).subscribe(data=>{
+      console.log(data);
+      this.title=data;
+    })
+  }
+
+  detailsTitle(title:string){
+
+    this.api.getAllFragmentAuthor(encodeURIComponent(title)).subscribe(data => {
+
+      this.fragment = data;
+    });
 
   }
 
