@@ -1,0 +1,4 @@
+.router-container {
+  height: calc(100vh - 100px); /* Ajusta la altura según tus necesidades */
+  overflow-y: auto;
+}

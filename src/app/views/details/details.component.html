@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2>Lista de Obras del Autor {{author}}</h2>
+      <div class="row">
+        <ul class="list-group">
+          <li *ngFor="let title1 of title;" class="list-group-item">
+            <div class="row justify-content-between">
+              <div class="col-md-8" (click)="TitleDetail(title1.title)">
+                <a >{{title1.title}}</a>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-primary" (click)="AddFavourites(title1.title)" >Agregar a Favoritos</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

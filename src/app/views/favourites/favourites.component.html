@@ -1,0 +1,53 @@
+
+<div class="container">
+  <div class="row mt-4">
+    <div class="col">
+      <h3>Número de Favoritos: {{numberFavourites}}</h3>
+      <h2>Autores Favoritos</h2>
+      <p>Número de Autores Favoritos: {{favourites.authors.length}} </p>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Autor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Aquí se insertan dinámicamente las filas con los autores -->
+            <tr *ngFor="let author of favourites.authors">
+              <td>{{author}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col">
+      <h2>Obras Favoritas</h2>
+      <p>Número de Obras Favoritas: {{favourites.title.length}} </p>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Obra</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr *ngFor="let title of favourites.title">
+              <td>{{title}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+
+      </div>
+    </div>
+  </div>
+</div>

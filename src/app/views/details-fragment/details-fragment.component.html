@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2>Lista de Obras del Autor {{author}}</h2>
+      <h3>Título de la Obra {{title}}</h3>
+      <ul class="list-group">
+        <li *ngFor="let fragment1 of fragment;" class="list-group-item" >
+          <h2>{{fragment1.author}}</h2>
+          <h3>{{fragment1.title}}</h3>
+          <ul  *ngFor="let lines of fragment1.lines;">
+            <a >{{lines}}</a>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

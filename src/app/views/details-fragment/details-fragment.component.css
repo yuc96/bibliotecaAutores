@@ -1,0 +1,41 @@
+/* Estilos para la lista de obras */
+.container {
+  margin-top: 20px;
+}
+
+.list-group-item {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.list-group-item h2 {
+  margin-top: 0;
+}
+
+.list-group-item h3 {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+/* Estilos para las líneas de los poemas */
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff; /* Color azul para los enlaces */
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #0056b3; /* Color azul oscuro al pasar el cursor */
+}
+

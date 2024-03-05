@@ -1,0 +1,15 @@
+.list-group-item {
+  cursor: pointer; /* Cambiar el cursor al pasar sobre los elementos de la lista */
+}
+
+.list-group-item a {
+  text-decoration: none; /* Quitar el subrayado predeterminado */
+}
+
+.list-group-item:hover {
+  background-color: #343b41; /* Cambiar el color de fondo al pasar el mouse */
+}
+
+.list-group-item:hover a {
+  color: #c9c5c5; /* Cambiar el color del texto al pasar el mouse */
+}

@@ -1,0 +1,28 @@
+/* Estilos personalizados */
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-brand:hover {
+  color: #007bff; /* Cambia el color al pasar el cursor */
+}
+
+.favorites-text {
+  margin-right: 10px;
+  color: #ffffff; /* Color del texto */
+  font-weight: bold;
+}
+
+.logOut{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.logOut:hover{
+  color: #007bff;
+  cursor: pointer;
+}
