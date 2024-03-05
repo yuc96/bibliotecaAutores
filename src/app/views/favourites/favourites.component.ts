@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { ListFavourites } from '../../models/favourites.interface';
+import { ApiService } from '../../servicios/api/api.service';
 
 @Component({
   selector: 'app-favourites',
@@ -12,6 +13,8 @@ import { ListFavourites } from '../../models/favourites.interface';
 })
 export class FavouritesComponent {
 
+  constructor(private api:ApiService){};
+
   favourites: ListFavourites = {
     authors: [],
     title: []
@@ -21,6 +24,10 @@ export class FavouritesComponent {
 
 
   ngOnInit(): void {
+    this.setObjectFavourites();
+  }
+
+  setObjectFavourites(){
     const storedData = localStorage.getItem('favouritesUser');
 
     // Verificar si existe algún dato almacenado
@@ -33,6 +40,19 @@ export class FavouritesComponent {
     } else {
       console.log('No se encontraron datos almacenados en localStorage.');
     }
+  }
+
+  removeFavouriteAuthor(author:string){
+
+    this.api.removeFavouriteAuthor(author);
+    this.setObjectFavourites();
+
+  }
+  removeFavouriteTitle(title:string){
+
+    this.api.removeFavouriteTitle(title);
+    this.setObjectFavourites();
+
   }
 
 }

@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="row mt-4">
     <div class="col">
@@ -10,19 +9,28 @@
           <thead>
             <tr>
               <th>Autor</th>
+              <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
             <!-- Aquí se insertan dinámicamente las filas con los autores -->
             <tr *ngFor="let author of favourites.authors">
-              <td>{{author}}</td>
+              <td  style="cursor: pointer;">{{author}}</td>
+              <td>
+                <button class="btn btn-danger" (click)="removeFavouriteAuthor(author)">Eliminar Favorito</button>
+              </td>
             </tr>
           </tbody>
         </table>
       </div>
-      <div>
+    </div>
+  </div>
 
-      </div>
+  <!-- Lista desplegable de detalles de autor -->
+  <div class="row mt-4" >
+    <div class="col">
+      <h3>Detalles del Autor: </h3>
+
     </div>
   </div>
 
@@ -35,19 +43,28 @@
           <thead>
             <tr>
               <th>Obra</th>
+              <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
-
+            <!-- Aquí se insertan dinámicamente las filas con las obras -->
             <tr *ngFor="let title of favourites.title">
-              <td>{{title}}</td>
+              <td  style="cursor: pointer;">{{title}}</td>
+              <td>
+                <button class="btn btn-danger" (click)="removeFavouriteTitle(title)" >Eliminar Favorito</button>
+              </td>
             </tr>
           </tbody>
         </table>
       </div>
-      <div>
+    </div>
+  </div>
 
-      </div>
+  <!-- Lista desplegable de detalles de obra -->
+  <div class="row mt-4">
+    <div class="col">
+      <h3>Detalles de la Obra: </h3>
+
     </div>
   </div>
 </div>

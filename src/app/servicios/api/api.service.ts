@@ -92,6 +92,7 @@ export class ApiService {
   }
 
   removeFavouriteAuthor(author: string): void {
+    this.favouritesSubject= new  BehaviorSubject<ListFavourites>(this.setFavourites());
     const favourites = this.favouritesSubject.getValue();
     const index = favourites.authors.indexOf(author);
     if (index !== -1) {
@@ -101,6 +102,7 @@ export class ApiService {
   }
 
   removeFavouriteTitle(title: string): void {
+    this.favouritesSubject= new  BehaviorSubject<ListFavourites>(this.setFavourites());
     const favourites = this.favouritesSubject.getValue();
     const index = favourites.title.indexOf(title);
     if (index !== -1) {
